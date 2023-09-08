@@ -1,0 +1,21 @@
+<!--搜索框-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="/static/dashboard/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/dashboard/css/home.css" >
+</head>
+<body>
+<div class="midbox">
+    <form method="get">
+        ${csrf_token}
+        <input type="search" name="wd" id="seaid" placeholder="输入一部电影（例：泰坦尼克号）" autofocus="autofocus" autocomplete="off">
+        <button type="submit" id="subid" value="">搜索</button>
+    </form>
+</div>
+<button class="btn btn-default"><a href="/dashboard/SelfRecommendation/" style="color: black; text-decoration: none;">个人中心</a></button>
+</body>
+</html>
