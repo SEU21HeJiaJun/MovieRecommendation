@@ -1,0 +1,64 @@
+/* Register.css */
+body{
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/multi-movie.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: grayscale(60%);
+  z-index: -1;
+}
+
+/* Center the login form */
+.edit-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the login button */
+.form-group {
+  display: block;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn-default{
+  display: inline-block;
+  boarder:0.5px solid;
+  background-color: #59c2c5;
+  color: #fff;
+  width: 80%; /* 调整按钮的宽度 */
+  margin-left: 20px;
+}
+
+.btn-default:hover{
+    background-color:#59c2a0;
+}
+
+.background-box {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  width: 120%; /* 调整输入框的宽度 */
+}

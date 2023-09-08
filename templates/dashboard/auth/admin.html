@@ -1,0 +1,58 @@
+<!--管理员界面的用户列表增删改-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>管理员</title>
+</head>
+<body>
+    ${csrf_token}
+    <%! from django.shortcuts import reverse %>
+    <%def name="content()">
+    <%
+        prev_page = '{}?page={}'.format(reverse('admin_manager'),page_num-1)
+        next_page = '{}?page={}'.format(reverse('admin_manager'),page_num+1)
+    %>
+    <h1>管理员模块</h1>
+    % if page_num > 1:
+    <a href="${prev_page}">上一页</a>
+    % endif
+    % if page_num < total:
+        <a href="${next_page}">下一页</a>
+    %endif
+        <a href="">上一页</a>
+        <a href="">下一页</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>编辑</th>
+        </tr>
+        </thead>
+        <tbody>
+        %for user in users:
+            <tr>
+                <td>
+                    ${user.username}
+                </td>
+                <td>
+                    ${user.data_joined}
+                </td>
+                %if user.is_superuser:
+                    <td>
+                        <a href="${reverse('admin_update_status')}?status=off" &id=${user.id}>取消管理员</a>
+                    </td>
+                %else:
+                    <td>
+                        <a href="${reverse('admin_update_status')}?status=on">成为管理员</a>
+                    </td>
+                %endif
+            </tr>
+        %endfor
+        </tbody>
+    </table>
+</body>
+</html>

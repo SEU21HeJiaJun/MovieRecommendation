@@ -1,0 +1,77 @@
+/* 输入框界面ui */
+
+body{
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/multi-movie.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: grayscale(60%) opacity(0.15); /* 增加透明度 */
+  z-index: -1;
+}
+
+.midbox{
+    float: center;
+    display: flex;
+    background:none;
+    margin-top:400px;
+}
+
+.midbox form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 使用视口高度作为容器的高度 */
+    width: 680px;
+    height:40px;
+    margin:0 auto;
+    border:1px solid black;
+    border-radius: 40px;
+    background: url("../images/magnifier.jpg") no-repeat 10px center; /* 设置背景图像和位置 */
+    background-size: 40px; /* 设置背景图像大小 */
+}
+
+#seaid{
+    float:left;
+    width: 80%;
+    height: 40px;
+    outline: none;
+    border: none; /* 添加边框样式 */
+    background-size: 20px; /* 设置背景图像大小 */
+    font-size: 18px;
+    text-indent: 1em;
+    background:rgba(255,255,255,.2);
+}
+
+#subid{
+    float:left;
+    width: 60px;
+    height: 40px;
+    outline: none;
+    background:transparent;
+    border: none;
+    font-size: 14px;
+    background-position-y: 4px;
+    cursor:pointer;
+}
+
+.btn-default{
+  display: inline-block;
+  border:0.5px solid black;
+  border-radius:30px;
+  width: 10%; /* 调整按钮的宽度 */
+  margin-left: 1250px;
+  margin-top:300px;
+}
+
+.btn-default:hover{
+    cursor:pointer;
+}
