@@ -1,0 +1,22 @@
+<!--电影简介ui-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Introduction</title>
+</head>
+<body>
+    <img src="{{movie.cover_url}}">
+    <p>{{ movie.title }}</p>
+    <p>{{ movie.score }}</p>
+    <p>{{ movie.types }}</p>
+    <p>{{ movie.regions }}</p>
+    <p>{{ movie.release_date }}</p>
+    <p>{{ movie.actors }}</p>
+    <p>{{ movie.title }}</p>
+    <form action="{% url 'dashboard_MovieIntroduction' movie.id %}" method="post">
+        {%csrf_token%}
+        <button type="submit" id="subid" value="">点赞</button>
+    </form>
+</body>
+</html>

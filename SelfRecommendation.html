@@ -1,0 +1,24 @@
+<!--个性化推荐中心ui-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Self Recommendation</title>
+</head>
+<body>
+    <ul>
+      {% for movie in movies %}
+        <li><img src="{{movie.cover_url}}"></li>
+        <li>{{ movie.title }}</li>
+        <li>{{ movie.score }}</li>
+        <li>{{ movie.types }}</li>
+        <li>{{ movie.regions }}</li>
+        <li>{{ movie.release_date }}</li>
+        <li>{{ movie.actors }}</li>
+        <li>{{ movie.title }}</li>
+      {% empty %}
+        <li>还未能推荐电影</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
